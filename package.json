@@ -1,9 +1,9 @@
 {
   "name": "@local/dsh-chat-mode",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
-  "description": "A chat-only agent preset that hides every tool except billion-context and uses a minimal system prompt.",
+  "description": "A chat-only agent preset with a minimal prompt, no file access, and an optional switch for billion-context compression tools.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,12 +15,17 @@
   },
   "exports": {
     "./no-tools": "./lib/no-tools.js",
+    "./settings": "./lib/settings.js",
+    "./client": "./client.js",
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg"
   },
   "files": [
     "cordis.patch.yml",
     "lib/no-tools.js",
+    "lib/settings.js",
+    "lib/settings-store.js",
+    "client.js",
     "locale/*.json",
     "icon.svg",
     "README.md",
@@ -29,6 +34,17 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
     }
+  },
+  "dependencies": {
+    "@deepseek-ai/cosmokit": "1.8.6",
+    "@deepseek-ai/schemastery": "3.18.5"
   }
 }

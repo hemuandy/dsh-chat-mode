@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Chat mode",
-    "description": "Adds a chat-only agent preset that hides all tools except billion-context and uses a minimal system prompt."
+    "description": "Adds a chat-only agent preset with a minimal prompt, no file access, and an optional switch for billion-context compression tools."
   }
 }

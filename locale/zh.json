@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "聊天模式",
-    "description": "新增纯聊天预设：隐藏所有工具（仅保留 billion-context 压缩工具），不能读写文件，只保留最简系统提示词以降低 token 消耗。"
+    "description": "新增纯聊天预设：默认隐藏所有工具、不能读写文件，只保留最简系统提示词以降低 token 消耗；可在设置中启用 billion-context 压缩工具。"
   }
 }
