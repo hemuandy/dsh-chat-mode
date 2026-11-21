@@ -12,6 +12,10 @@
 # the harness identity, tool guidance, skills catalog and other sections are
 # suppressed, and the plugin also suppresses the optional runtime snapshot.
 - insert:
+    # Exact package-root row: DSH only scans a package's dsh.client half when a
+    # Loader row names the bare package. Subpath-only rows never expose client.js.
+    - id: chat-mode-root
+      name: '@local/dsh-chat-mode'
     - id: chat-mode-settings
       name: '@local/dsh-chat-mode/settings'
       config:

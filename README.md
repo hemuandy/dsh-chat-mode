@@ -6,7 +6,7 @@ billion-context 的上下文压缩工具是否放行，以及聊天模式使用�
 
 ## 它做了什么
 
-预设 `chat` 内部只挂载两行（设置页本身是另一个全局插件行）：
+预设 `chat` 内部只挂载两行；另外有一个**包根入口** `@local/dsh-chat-mode`（空插件 `index.js`）。它不注册任何能力，只用于让 DSH 的客户端扫描器发现本包的 `client.js`——扫描器只认精确的包根 Loader 行，子路径行（`/settings`、`/no-tools`、`/prompt`）不会触发客户端加载。设置页本身是另一个全局插件行。
 
 1. `@local/dsh-chat-mode/no-tools`：在预设作用域内调用 `ctx.tools.restrict({ deny })`，把当前所有全局工具（shell、文件读写、IM、Blender 等）从该 Agent 的工具定义里移除。
    - 开关**关闭**（默认）：所有工具都隐藏，包括 billion-context。
