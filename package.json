@@ -1,9 +1,9 @@
 {
   "name": "@local/dsh-chat-mode",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
-  "description": "A chat-only agent preset with a minimal prompt, no file access, and an optional switch for billion-context compression tools.",
+  "description": "A chat-only agent preset with an editable minimal prompt, no file access, and a settings page for optional billion-context compression tools.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,13 +18,15 @@
     "./settings": "./lib/settings.js",
     "./client": "./client.js",
     "./locale/*.json": "./locale/*.json",
-    "./icon": "./icon.svg"
+    "./icon": "./icon.svg",
+    "./prompt": "./lib/prompt.js"
   },
   "files": [
     "cordis.patch.yml",
     "lib/no-tools.js",
     "lib/settings.js",
     "lib/settings-store.js",
+    "lib/prompt.js",
     "client.js",
     "locale/*.json",
     "icon.svg",
