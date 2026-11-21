@@ -1,0 +1,28 @@
+# Agent preset chat: a deliberately empty composition plus a hard tool filter.
+#
+# The preset mounts no tool plugins, so there are no tools of its own. Host-level
+# plugins (shell, file access, IM, Blender, …) still register tools globally, so
+# the `no-tools` row below runs in this preset's scope and hides every global tool
+# except the billion-context compression tools.
+#
+# `complete: true` makes the short prefix the entire system prompt; the harness
+# identity, tool guidance, skills catalog and other sections are suppressed.
+# `includeRuntimeContext: false` also drops the optional runtime snapshot.
+- insert:
+    - id: preset-chat
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: chat
+        name: 聊天模式
+        description: 纯聊天模式：禁用所有工具（仅保留 billion-context 压缩工具），不能读写文件，只保留最简系统提示词。
+        order: 5
+        plugins:
+          - id: tool-filter
+            name: '@local/dsh-chat-mode/no-tools'
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: |-
+                You are a helpful, concise assistant. Reply in the user's language.
+              complete: true
+              includeRuntimeContext: false
