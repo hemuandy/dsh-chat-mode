@@ -18,7 +18,7 @@
 ## 安装
 
 ```bash
-git clone <this-repo> dsh-chat-mode
+git clone https://github.com/hemuandy/dsh-chat-mode.git
 ```
 
 在 DeepSeek Harness 插件管理器里选择这个本地目录安装（或调用 `plugin_manager install_bundle`，目标为绝对路径）。本地目录会以 `link:` 依赖接入，**安装后需要重启一次 DeepSeek Harness**，预设才会出现在模式选择器。之后**先选择「聊天模式」，再新建会话**；模式切换只对下一个新会话生效，不会改写已经打开的会话。

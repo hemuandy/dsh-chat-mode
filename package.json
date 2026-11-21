@@ -5,6 +5,14 @@
   "type": "module",
   "description": "A chat-only agent preset that hides every tool except billion-context and uses a minimal system prompt.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemuandy/dsh-chat-mode.git"
+  },
+  "homepage": "https://github.com/hemuandy/dsh-chat-mode#readme",
+  "bugs": {
+    "url": "https://github.com/hemuandy/dsh-chat-mode/issues"
+  },
   "exports": {
     "./no-tools": "./lib/no-tools.js",
     "./locale/*.json": "./locale/*.json",
