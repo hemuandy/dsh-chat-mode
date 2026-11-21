@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-chat-mode",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "type": "module",
   "description": "A chat-only agent preset with a minimal prompt, no file access, and an optional switch for billion-context compression tools.",
